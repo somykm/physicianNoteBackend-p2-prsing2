@@ -42,6 +42,7 @@ public class PatientHistoryController {
     }
     @GetMapping("/all")
     public List<PatientHistory> getPatientsMedicalHistory() {
+        log.info("The patient note has been fetched.");
         return patientHistoryService.getPatientsMedicalHistory();
     }
 
@@ -53,7 +54,9 @@ public class PatientHistoryController {
     }
     @GetMapping("/")
     public String viewHistory(Model model) {
+        log.info("Loading patient history view...");
         List<PatientNoteView> enrichedNotes = viewService.getPatientFullHistory();
+        log.info("Retrieved {} patient notes:", enrichedNotes.size());
         model.addAttribute("notes", enrichedNotes);
         model.addAttribute("note", new PatientHistory());
         return "history";
