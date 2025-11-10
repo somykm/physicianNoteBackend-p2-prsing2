@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class PatientHistoryNameViewService {
     private final PatientHistoryService patientHistoryService;
     private  final RestTemplate restTemplate;
-    private final String patientServiceUrl ="http://localhost:8081/api/patient";
+    private final String patientServiceUrl ="http://medilabo-demographics:8081/api/patient";
 
     @Autowired
     public PatientHistoryNameViewService(PatientHistoryService patientHistoryService, RestTemplate restTemplate) {
