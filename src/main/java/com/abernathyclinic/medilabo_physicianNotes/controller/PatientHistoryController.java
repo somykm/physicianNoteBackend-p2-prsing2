@@ -70,4 +70,5 @@ public class PatientHistoryController {
         mav.addObject("note", new PatientHistory());
         return mav;
     }
+
 }

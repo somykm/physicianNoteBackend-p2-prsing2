@@ -32,7 +32,7 @@ public class PatientHistoryNameViewService {
 
             try {
                 Patient patient = restTemplate.getForObject(
-                        patientServiceUrl + "/" + history.getPatId(), Patient.class);
+                        patientServiceUrl + "/all" + history.getPatId(), Patient.class);
                 if (patient != null) {
                     view.setFullName(patient.getFirstName() + " " + patient.getLastName());
                 } else {
